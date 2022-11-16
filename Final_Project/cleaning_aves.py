@@ -60,14 +60,15 @@ for row in range(0, data.shape[0]):
         data.iloc[row,-1] = data.iloc[row,-1].replace(" Bru", "")
         
 unique = data["Scientific Name"].unique()
-print(len(unique)-600)
-print("Unique: ", unique[600:700])
+print("Unique: ", unique[700:800])
 file = open("Aves_commonNames.txt","r+")
 lines = file.readlines()
 com_names = []
 for line in lines:
-    com_names = com_names + line.rstrip().split(",")
+    com_names = com_names + list(filter(None,line.strip('\n').split(",")))
 file.close()
+print("Left: ",len(unique)-len(com_names))
+print("Done: ",len(com_names))
 '''
 ## Create a dictionary to map the scientific names tot he common names
 sci_to_com = {}
