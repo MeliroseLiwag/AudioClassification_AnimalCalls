@@ -98,17 +98,3 @@ print("Total Data Points: ", clean.shape[0], "/", data.shape[0],
       ",", round((clean.shape[0]/data.shape[0])*100,2), "% Complete" )
 clean.to_csv("cleaned_aves.csv", index=False)
 
-## Create a dictionary to map the scientific names to the common names
-sci_to_com = {}
-for i in range(0, len(dict_keys)):
-    sci_to_com[unique[i]] = com_names[i]
-
-'''
-## Add the Common Names column to the original data frame
-sci_name_list = []
-for row in range(0, data.shape[0]):
-    sci_name_list.append(sci_to_com[data.iloc[row,-1]])
-data["Common Name"] = sci_name_list
-
-data.to_csv("cleaned_carnivora.csv", index=False)
-'''
