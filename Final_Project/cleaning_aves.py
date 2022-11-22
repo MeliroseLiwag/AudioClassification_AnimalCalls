@@ -47,20 +47,28 @@ data["Scientific Name"] = sci_names
 ## What Columns are we dealing with
 cols = data.columns
 
-## Take out scientific names with Canau**
+## Take out scientific names with Tytalb**
 drop_rows = []
 for row in range(0, data.shape[0]):
     if "Tytalb" in data.iloc[row,-1]:
         drop_rows.append(row)
 data.drop(drop_rows, inplace=True)
 
-## Take out "Bru" in scientific names
+## Take out "Bru" and "Tre" and " Thi Certhia 60" in scientific names
 for row in range(0, data.shape[0]):
     if "Bru" in data.iloc[row, -1]:
         data.iloc[row,-1] = data.iloc[row,-1].replace(" Bru", "")
+    if "Tre" in data.iloc[row, -1]:
+        data.iloc[row,-1] = data.iloc[row,-1].replace(" Tre", "")
+    if "Thi Certhia 60" in data.iloc[row, -1]:
+        data.iloc[row,-1] = data.iloc[row,-1].replace(" Thi Certhia 60", "")
+    ## Further clean up bird names
+    if "Phylloscopus trochilus" in data.iloc[row, -1]:
+        data.iloc[row,-1] = data.iloc[row,-1].replace(data.iloc[row,-1]
+            , "Phylloscopus trochilus")
         
 unique = data["Scientific Name"].unique()
-print("Unique: ", unique[700:800])
+#print("Unique: ", unique[1300:1400])
 file = open("Aves_commonNames.txt","r+")
 lines = file.readlines()
 com_names = []
@@ -69,29 +77,33 @@ for line in lines:
 file.close()
 print("Left: ",len(unique)-len(com_names))
 print("Done: ",len(com_names))
-'''
-## Create a dictionary to map the scientific names tot he common names
+
+## Create a dictionary to map the scientific names to the common names
 sci_to_com = {}
 for i in range(0,len(com_names)):
     sci_to_com[unique[i]] = com_names[i]
 
 ## Add the Common Names column to the original data frame
 sci_name_list = []
-dict_keys = unique[0:601]
+dict_keys = unique[0:len(com_names)]
 for row in range(0, data.shape[0]):
     if data.iloc[row,-1] in dict_keys:
         sci_name_list.append(sci_to_com[data.iloc[row,-1]])
     else:
         sci_name_list.append(None)
-data["Common Name"] = sci_name_list
-data.dropna(inplace=True)
-data.to_csv("[WIP]cleaned_aves.csv", index=False)
+clean = data.copy()
+clean["Common Name"] = sci_name_list
+clean.dropna(inplace=True)
+print("Total Data Points: ", clean.shape[0], "/", data.shape[0],
+      ",", round((clean.shape[0]/data.shape[0])*100,2), "% Complete" )
+clean.to_csv("cleaned_aves.csv", index=False)
 
 ## Create a dictionary to map the scientific names to the common names
 sci_to_com = {}
-for i in range(0, len(unique)):
+for i in range(0, len(dict_keys)):
     sci_to_com[unique[i]] = com_names[i]
 
+'''
 ## Add the Common Names column to the original data frame
 sci_name_list = []
 for row in range(0, data.shape[0]):
