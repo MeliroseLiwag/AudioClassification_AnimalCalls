@@ -41,7 +41,7 @@ One problem with the raw data set that we found was the absence of the animals' 
 #### Input Data
 Ultimately, the URL columns of each animal group were used to batch-download each '.mp3' file and converted to a '.wav' for easier processing through the Pydub library in Python. Furthermore, only 5 seconds of each audio is kept as we found that it would be the most consistent time signature for all audio files. 
 
-Each audio file is converted to a Mel Spectrogram matrix and Mel Frequency Cepstral Coefficient (MFCC) for use in both SVM and GMM models respectively. An example of a Mel Spectrogram is shown as follows:
+Each audio file is converted to a Mel Spectrogram matrix and Mel Frequency Cepstral Coefficient (MFCC) for use in both SVM and GMM models respectively.
 
 #### Mel Spectrogram:
 ![Mel Spectrogram Example](/Final_Project/Images/spectrogram.png)
