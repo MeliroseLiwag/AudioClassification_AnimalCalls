@@ -22,16 +22,16 @@ This project explores the use of regular Machine Learning techniques (such as Ga
 Data is gathered from the [`Animal Sound Archive`](https://www.museumfuernaturkunde.berlin/en/science/animal-sound-archive) website from a museum in Berlin and contains around 120,000 sound recordings of various species. The downloadable data is available upon request only but the cleaned and final dataset used for this project can be found in [`data.csv`](/Final_Project/Data/data.csv)
 
 The main animal groups we focused on are the Carnivora animal group and the Aves animal group. Further, this project will consider the Aves (birds) group to be safe animals while the Carnivora (Carnivorous animals) group is considered to be dangerous to simplify the classification prompt to be binary.
-1. [`CARNIVORA ANIMAL GROUP`](/Final_Project/Data/cleaned_carnivora.csv)
-2. [`AVES ANIMAL GROUP`](/Final_Project/Data/cleaned_aves.csv)
+1. [`CARNIVORA ANIMAL GROUP`](/Final_Project/Data/cleaned_carnivora.csv) - CSV containing the Carnivora animal group
+2. [`AVES ANIMAL GROUP`](/Final_Project/Data/cleaned_aves.csv) - CSV containing the Aves animal group
 
 
 See more info about data pre-processing in the following files:
-  1. [`Canivora DataSet`](/Final_Project/Code/cleaning_carnivora.py)
-  2. [`Aves DataSet`](/Final_Project/Code/cleaning_aves.py)
+  1. [`Canivora DataSet`](/Final_Project/Code/cleaning_carnivora.py) - code containing the cleaning process of the Carnivora data set
+  2. [`Aves DataSet`](/Final_Project/Code/cleaning_aves.py) - code containing the cleaning process of the Aves data set 
 
 # Exploratory Data Analysis
-See full EDA n [`EDA.ipynb`](/Final_Project/Notebooks/EDA.ipynb)
+See full EDA in Jupyter notebook: [`EDA.ipynb`](/Final_Project/Notebooks/EDA.ipynb)
 
 One problem with the raw data set that we found was the absence of the animals' actual names in general and thus would be hard for others to understand what animal it was. The scientific names were then found using regular expressions in Python through the provided URL in the raw dataset. The scientific names of the animals were then used to scrub the internet for common names and thus, two additional columns were added to each data frame:
   1. Scientific Name - Contains the Scientific name of each animal within the group.
@@ -49,7 +49,7 @@ Each audio file is converted to a Mel Spectrogram matrix and Mel Frequency Cepst
 #### MFCC: 
 ![MFCC Example](/Final_Project/Images/MFCC.PNG)
 
-More info on creating the spectrograms can be viewed in [`CreateSpectro.ipynb`](/Final_Project/Notebooks/CreateSpectro.ipynb) right here on GitHub. 
+More info on creating the spectrograms can be viewed in the Jupyter notebook: [`CreateSpectro.ipynb`](/Final_Project/Notebooks/CreateSpectro.ipynb) right here on GitHub. 
 
 ### Model Evaluation 
 Due to the large number of features found in both the MFCC and Mel spectrograms, we used PCA to extract only the features necessary to explain the data as a whole. A train/test split of 90-10 is used to train and test our models to aim for the higher possible accuracy. It is important to keep in mind that the resulting data set is made up of a random sampling of (about) equal parts Carnivora and Aves.
