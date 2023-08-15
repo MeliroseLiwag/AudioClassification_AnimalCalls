@@ -56,7 +56,7 @@ GMM was only able to classify the audio files by 69% with PCA tuned with 95% var
   - More data is needed to establish the reliability and viability of the model
 Accuracies are pretty low to our taste but it is the best we could do with GMM after different parameter testings.
 
-![GMM Summary](/Final_Project/Images/GMM_summary.png)
+![GMM Summary](/Final_Project/Images/GMM_summary.PNG)
 
 #### Models - SVM
 A base SVM model was tuned with 4 PCA components instead of the 95% variability PCA parameter used for GMM. Labels of each animal group were also changed to a binary component to perform One-Class SVM. 
