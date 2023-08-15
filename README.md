@@ -8,9 +8,9 @@ See the full report and analyses in the file [`FinalReport.pdf`](/FinalReport.pd
 This project explores the use of regular Machine Learning techniques (such as Gaussian Mixture Models (GMM) and Support Vector Machines (SVM)) in classifying audio files. As we learned, simple machine-learning techniques could be used on images for a simple classification prompt. Audio files could be simplified into a matrix of values in the same way that images can be simplified into a matrix of pixel values. With this, we decided to experiment with using image classification methods and expanded on said methods for audio classification.
 
 # Novelty
-1. Attempts audio classification on audio sounds
+1. Attempts classification on audio files
 2. Custom dataset, consisting of 2 datasets curated for this project
-3. Use of simple modeling techniques in lew of state-of-the-art audio classification methods
+3. Use of simple modeling techniques in lieu of state-of-the-art audio classification methods
    
 # Data
 Data is gathered from the Animal Sound Archive website from a museum in Berlin and contains around 120,000 sound recordings of various species. The downloadable data is available upon request only but the cleaned and final dataset used for this project can be found in [`data.csv`](/Final_Project/Data/data.csv)
@@ -19,17 +19,21 @@ The main animal groups we focused on are the Carnivora animal group and the Aves
 1. [`CARNIVORA ANIMAL GROUP`](/Final_Project/Data/cleaned_carnivora.csv)
 2. [`AVES ANIMAL GROUP`](/Final_Project/Data/cleaned_aves.csv)
 
-One problem with the raw data set that we found was the absence of the animals' actual names in general and thus would be hard for others to understand what animal it was. The scientific names were then found using regular expressions in Python through the provided URL in the raw dataset. The scientific names of the animals were then used to scrub the internet for common names and thus, two additional columns were added to each data frame:
-  1. Scientific Name - Contains the Scientific name of each animal within the group.
-  2. Common Name - Intuitively, using the common name of the animals within the group would be easily understandable by others.
 
 See more info about data pre-processing in the following files:
   1. [`Canivora DataSet`](/Final_Project/Code/cleaning_carnivora.py)
   2. [`Aves DataSet`](/Final_Project/Code/cleaning_aves.py)
 
+# Exploratory Data Analysis
+See full EDA n [`EDA.ipynb`](/Final_Project/Notebooks/EDA.ipynb)
+
+One problem with the raw data set that we found was the absence of the animals' actual names in general and thus would be hard for others to understand what animal it was. The scientific names were then found using regular expressions in Python through the provided URL in the raw dataset. The scientific names of the animals were then used to scrub the internet for common names and thus, two additional columns were added to each data frame:
+  1. Scientific Name - Contains the Scientific name of each animal within the group.
+  2. Common Name - Intuitively, using the common name of the animals within the group would be easily understandable by others.
+
 # Analysis
 ### Steps:
-  1. Data Mining - Curating data specific for this project
+  1. Data Mining - Curating data specific to this project
   2. Data pre-processing - Convert data into '.wav' files for easier classification through Python
   3. Dimensionality Reduction - Using Principal Component Analysis (PCA) to reduce the dimensions of spectrograms for a simpler model
   4. Model Building - GMM and SVM used to classify audio files
