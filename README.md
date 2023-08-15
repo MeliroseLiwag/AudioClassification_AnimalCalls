@@ -19,7 +19,7 @@ This project explores the use of regular Machine Learning techniques (such as Ga
   4. Model Building - GMM and SVM used to classify audio files
    
 # Data
-Data is gathered from the Animal Sound Archive website from a museum in Berlin and contains around 120,000 sound recordings of various species. The downloadable data is available upon request only but the cleaned and final dataset used for this project can be found in [`data.csv`](/Final_Project/Data/data.csv)
+Data is gathered from the [`Animal Sound Archive`](https://www.museumfuernaturkunde.berlin/en/science/animal-sound-archive) website from a museum in Berlin and contains around 120,000 sound recordings of various species. The downloadable data is available upon request only but the cleaned and final dataset used for this project can be found in [`data.csv`](/Final_Project/Data/data.csv)
 
 The main animal groups we focused on are the Carnivora animal group and the Aves animal group. Further, this project will consider the Aves (birds) group to be safe animals while the Carnivora (Carnivorous animals) group is considered to be dangerous to simplify the classification prompt to be binary.
 1. [`CARNIVORA ANIMAL GROUP`](/Final_Project/Data/cleaned_carnivora.csv)
