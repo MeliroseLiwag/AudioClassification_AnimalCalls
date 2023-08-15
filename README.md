@@ -11,6 +11,12 @@ This project explores the use of regular Machine Learning techniques (such as Ga
 1. Attempts classification on audio files
 2. Custom dataset, consisting of 2 datasets curated for this project
 3. Use of simple modeling techniques in lieu of state-of-the-art audio classification methods
+
+### Steps:
+  1. Data Mining - Curating data specific to this project
+  2. Data pre-processing - Convert data into '.wav' files for easier classification through Python
+  3. Dimensionality Reduction - Using Principal Component Analysis (PCA) to reduce the dimensions of spectrograms for a simpler model
+  4. Model Building - GMM and SVM used to classify audio files
    
 # Data
 Data is gathered from the Animal Sound Archive website from a museum in Berlin and contains around 120,000 sound recordings of various species. The downloadable data is available upon request only but the cleaned and final dataset used for this project can be found in [`data.csv`](/Final_Project/Data/data.csv)
@@ -32,12 +38,6 @@ One problem with the raw data set that we found was the absence of the animals' 
   2. Common Name - Intuitively, using the common name of the animals within the group would be easily understandable by others.
 
 # Analysis
-### Steps:
-  1. Data Mining - Curating data specific to this project
-  2. Data pre-processing - Convert data into '.wav' files for easier classification through Python
-  3. Dimensionality Reduction - Using Principal Component Analysis (PCA) to reduce the dimensions of spectrograms for a simpler model
-  4. Model Building - GMM and SVM used to classify audio files
-
 #### Input Data
 Ultimately, the URL columns of each animal group were used to batch-download each '.mp3' file and converted to a '.wav' for easier processing through the Pydub library in Python. Furthermore, only 5 seconds of each audio is kept as we found that it would be the most consistent time signature for all audio files. 
 
