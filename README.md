@@ -5,7 +5,7 @@
 See the full report and analyses in the file [`FinalReport.pdf`](/FinalReport.pdf)
 
 # Description
-This project explores the use of regular Machine Learning techniques (such as Gaussian Mixture Models (GMM) and Support Vector Machines (SVM)) in classifying audio files. As we learned, simple machine-learning techniques could be used on images for a simple classification prompt. Audio files could be simplified into a matrix of values in the same way that images can be simplified into a matrix of pixel values. With this, we decided to experiment with using image classification methods and expanded on said methods for audio classification.
+This project explores the use of regular Machine Learning techniques (such as Gaussian Mixture Models (GMM) and Support Vector Machines (SVM)) in classifying audio files. As we learned, simple Machine Learning techniques could be used on images for a simple classification prompt. Audio files could be simplified into a matrix of values in the same way that images can be simplified into a matrix of pixel values. With this, we decided to experiment with using image classification methods and expanded on said methods for audio classification.
 
 # Novelty
 1. Attempts classification on audio files
