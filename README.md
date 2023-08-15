@@ -58,6 +58,7 @@ Due to the large number of features found in both the MFCC and Mel spectrograms,
 GMM was only able to classify the audio files by 69% with PCA tuned with 95% variability.
   - correctly classifies 72% as not dangerous (birds) and 66% as dangerous (carnivorous animals)
   - More data is needed to establish the reliability and viability of the model
+
 Accuracies are pretty low to our taste but it is the best we could do with GMM after different parameter testings.
 
 ![GMM Summary](/Final_Project/Images/GMM_summary.PNG)
@@ -66,6 +67,7 @@ Accuracies are pretty low to our taste but it is the best we could do with GMM a
 A base SVM model was tuned with 4 PCA components instead of the 95% variability PCA parameter used for GMM. Labels of each animal group were also changed to a binary component to perform One-Class SVM. 
   - SVM performed better with lower dimensions than GMM
   - base accuracy of 59.09% with MFCC as input data and a base accuracy of 58.29% with Mel spectrogram as input data
+
 We decided to test our SVM model with varying gamma values while using the RBF kernel in hopes of improving our model.
   - gamma value of 9.800000000000001e-06 gave us the best accuracy of 91.98% with MFCC as input data
   - gamma value of 9.9e-06 gave us the best accuracy of 93.32% with Mel spectrogram as input data
